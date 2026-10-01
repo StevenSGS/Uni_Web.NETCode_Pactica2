@@ -1,0 +1,46 @@
+@model Producto
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Crear Producto</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="CrearProducto" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    <div class="mb-3">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Tipo" class="form-label"></label>
+                        <select asp-for="Tipo" class="form-select">
+                            <option value="">-- Seleccione --</option>
+                            <option>Natural</option>
+                            <option>Químico</option>
+                            <option>Líquido</option>
+                        </select>
+                        <span asp-validation-for="Tipo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Cantidad" class="form-label"></label>
+                        <input asp-for="Cantidad" class="form-control" />
+                        <span asp-validation-for="Cantidad" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PrecioUnitario" class="form-label"></label>
+                        <input asp-for="PrecioUnitario" class="form-control" />
+                        <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crear Producto</button>
+                    <a asp-action="CrearProducto" class="btn btn-secondary">Limpiar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
